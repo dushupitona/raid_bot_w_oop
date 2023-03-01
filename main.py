@@ -4,7 +4,7 @@ import markups
 
 a = classes.Check()
 
-bot = Bot(token='5407299648:AAHuiFOIBLjV0mQI0s9h7FNf9DV1-SMflag')
+bot = Bot(token='5407299648:AAHuiFOIBDV1-SMflag')
 dp = Dispatcher(bot)
 
 
