@@ -1,33 +1,41 @@
-from aiogram.types import ReplyKeyboardRemove, \
-    ReplyKeyboardMarkup, KeyboardButton, \
-    InlineKeyboardMarkup, InlineKeyboardButton
+from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 
 
-button1 = KeyboardButton('Калькулятор рейда')
 
-button2 = KeyboardButton('Дверь')
+button_strt_ask = KeyboardButton('Калькулятор рейда')
 
-button3 = KeyboardButton('Дерево')
-button4 = KeyboardButton('Металл')
-button5 = KeyboardButton('МВК')
+button_door = KeyboardButton('Дверь')
+button_grg = KeyboardButton('Гаражная дверь')
+button_wndw = KeyboardButton('Оконная решетка')
+button_wall = KeyboardButton('Стена')
+button_big_wall = KeyboardButton('Ворота/Большая стена')
 
-button6 = KeyboardButton('C4')
-button7 = KeyboardButton('Ракета')
-button8 = KeyboardButton('Бобовая граната')
-button9 = KeyboardButton('Связка боб. гранат')
-button10 = KeyboardButton('Разрывной патрон')
-button11 = KeyboardButton('Каменный патрон')
+button_wood = KeyboardButton('Дерево')
+button_metal = KeyboardButton('Металл')
+button_HQM = KeyboardButton('МВК')
+button_stone = KeyboardButton('Камень')
 
-markup1 = ReplyKeyboardMarkup().add(
-    button1)
+button_C4 = KeyboardButton('C4')
+button_rocket = KeyboardButton('Ракета')
+button_bob_grnd = KeyboardButton('Бобовая граната')
+button9_bundle_bob_grnd = KeyboardButton('Связка боб. гранат')
+button_expl_ammo = KeyboardButton('Разрывной патрон')
+button11_stn_ammo = KeyboardButton('Каменный патрон')
 
-markup2 = ReplyKeyboardMarkup().add(
-    button2)
-#'C4', 'Ракета', 'Бобовая граната', 'Связка боб. гранат',\
-# 'Разрывной патрон','Каменный патрон'
+markup_ask = ReplyKeyboardMarkup().add(
+    button_strt_ask)
 
+markup_chto = ReplyKeyboardMarkup().row(button_door,button_grg).row(button_wall, button_wndw)\
+    .row(button_big_wall)
 
-markup3 = ReplyKeyboardMarkup().add(button3).add(button4).add(button5)
+markup_qual1 = ReplyKeyboardMarkup().add(button_wood).add(button_metal).add(button_HQM)
 
-markup4 = ReplyKeyboardMarkup().row(button6, button7).row(button8, button9)\
-    .row(button10, button11)
+markup_qual2 = ReplyKeyboardMarkup().add(button_wood).add(button_stone)
+
+markup_qual3 = ReplyKeyboardMarkup().add(button_wood).add(button_stone).add(button_metal).add(button_HQM)
+
+markup_rd_f_wood_d = ReplyKeyboardMarkup().row(button_C4, button_rocket).row\
+    (button_bob_grnd, button9_bundle_bob_grnd).row(button_expl_ammo, button11_stn_ammo)
+
+markup_rd = ReplyKeyboardMarkup().row(button_C4, button_rocket).row\
+    (button_bob_grnd, button9_bundle_bob_grnd).row(button_expl_ammo)

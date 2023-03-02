@@ -19,6 +19,15 @@ class Check:
     def set_dict(self):
         if self.chto == 'Дверь':
             self.__dict__['dict_raid'] = dictry.door[self.qual][self.chem]
+        elif self.chto == 'Оконная решетка':
+            self.__dict__['dict_raid'] = dictry.window[self.qual][self.chem]
+        elif self.chto == 'Стена':
+            self.__dict__['dict_raid'] = dictry.wall[self.qual][self.chem]
+        elif self.chto == 'Гаражная дверь':
+            self.__dict__['dict_raid'] = dictry.garage[self.chem]
+        elif self.chto == 'Ворота/Большая стена':
+            self.__dict__['dict_raid'] = dictry.big_wall[self.qual][self.chem]
+
 
     def cnt_raid(self):
         return f'Вам понадобится {self.dict_raid} {self.chem.lower()}'
