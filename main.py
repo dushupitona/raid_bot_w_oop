@@ -63,8 +63,13 @@ async def get_chem(message: types.Message):
     global a
     a.__setattr__('chem', message.text)
     a.set_dict()
-    await message.answer(a.cnt_raid())
+    await message.answer(a.cnt_raid(), reply_markup=markups.markup_end)
 
+
+@dp.message_handler(lambda message: message.text in ['Кол-во рессурсов:'])
+async def get_chem(message: types.Message):
+    for key, value in a.cnt_res().items():
+        await message.answer(key + ' : ' + str(value * int(a.ret_vlme())), reply_markup=markups.button_strt)
 
 if __name__ == '__main__':
     executor.start_polling(dp, skip_updates=True)

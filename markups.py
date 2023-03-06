@@ -22,6 +22,10 @@ button9_bundle_bob_grnd = KeyboardButton('Связка боб. гранат')
 button_expl_ammo = KeyboardButton('Разрывной патрон')
 button11_stn_ammo = KeyboardButton('Каменный патрон')
 
+button_strt = KeyboardButton('/start')
+button_res = KeyboardButton('Кол-во рессурсов:')
+
+
 markup_ask = ReplyKeyboardMarkup().add(
     button_strt_ask)
 
@@ -39,3 +43,7 @@ markup_rd_f_wood_d = ReplyKeyboardMarkup().row(button_C4, button_rocket).row\
 
 markup_rd = ReplyKeyboardMarkup().row(button_C4, button_rocket).row\
     (button_bob_grnd, button9_bundle_bob_grnd).row(button_expl_ammo)
+
+markup_end = ReplyKeyboardMarkup().add(button_res).add(button_strt)
+
+markup_strt = ReplyKeyboardMarkup().add(button_strt)
